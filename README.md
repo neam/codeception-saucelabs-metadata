@@ -1,22 +1,20 @@
-Notifier
-========
+Codeception Extension: Saucelabs Metadata
+============================
 
-This repository demonstrates the usage of Codeception Extension API.
-Check it's source code to write your own extensions.
+Codeception extension that provides metadata to Saucelabs when running tests.
 
-## Notification Extensions for Codeception
+## Requirements
 
-Extensions from this package that can be included in Codeception >= 1.6.4 to receive notification of test results.
-**This notifications are limited to just a few basic examples. It is recommended to get it forked and patched for your actual needs.**
-
-Notifcation are made via [notificatior](https://github.com/namshi/notificator) library by [NAMSHI](https://github.com/namshi/).
+* A Saucelabs account
+* A Codeception acceptance testing suite that is configured to run tests against Saucelabs
+* Codeception >= 2.0.2
 
 ## Installation
 
 1. Install [Codeception](http://codeception.com) via Composer
-2. Add  `codeception/notifier: "*"` to your `composer.json`
-3. Run `composer install`.
-4. Include extensions into `codeception.yml` configuration:
+2. Add  `neam/codeception-saucelabs-metadata: "*"` to your `composer.json`
+3. Run `composer update neam/codeception-saucelabs-metadata`.
+4. Include the extension into `codeception.yml` configuration:
 
 Sample:
 
@@ -28,35 +26,13 @@ paths:
     helpers: tests/_helpers
 extensions:
     enabled:
-      - Codeception\Extension\UbuntuNotifier # extension class name
-      - Codeception\Extension\EmailNotifier
+      - Codeception\Extension\SaucelabsMetadata
     config:
-      Codeception\Extension\EmailNotifier: # per extension config
-          email: tests@company.com
+      Codeception\Extension\SaucelabsMetadata:
+          username: "foouser"
+          accesskey: "secretavbcde1234"
+          build: "Shows up in the Build column in the Saucelabs dashboard"
+          tags: "shows up,in the tags column,in the saucelabs dashboard"
 
-```
-
-## Ubuntu Notifications
-
-Class: **Codeception\Extension\UbuntuNotifier**.
-
-A basic `notify-send` wrapper of Notificator can be used to send notifications in Ubuntu.
-Done via notificator's NotifySend hendler.
-
-## Email Notification
-
-Class: **Codeception\Extension\EmailNotifier**
-
-Unlike Ubuntu Notification this extension also takes extra parameter from config `codeception.yml`:
-
-``` yaml
-
-extensions:
-  - Codeception\Extension\EmailNotifier:
-      address: tests@company.com  
-
-```
-
-This email will be used to send notifications.
 
 -----
