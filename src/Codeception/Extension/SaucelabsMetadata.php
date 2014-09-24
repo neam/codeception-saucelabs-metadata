@@ -57,7 +57,6 @@ class SaucelabsMetadata extends \Codeception\Platform\Extension
     {
         $job = $this->getCorrespondingSaucelabsJob($e);
         $this->sauceApi()->stopJob($job['id']);
-        $this->sauceApi()->updateJob($job['id'], array('passed' => false));
     }
 
     public function testFailed(\Codeception\Event\FailEvent $e)

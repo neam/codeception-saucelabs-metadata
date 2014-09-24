@@ -34,5 +34,27 @@ extensions:
           build: "Shows up in the Build column in the Saucelabs dashboard"
           tags: "shows up,in the tags column,in the saucelabs dashboard"
 
+## Testing this extension
+
+1. Run the following from the same directory as this README (change the access details accordingly):
+
+    composer install
+    vendor/bin/codecept bootstrap
+    vendor/bin/codecept generate:cept acceptance ExampleTest
+
+    export SAUCE_USERNAME="changeme"
+    export SAUCE_ACCESS_KEY="changeme"
+    export SAUCE_METADATA_BUILD="foo"
+    export SAUCE_METADATA_TAGS="foo,bar,zoo"
+    export SELENIUM_HOST=$SAUCE_USERNAME:$SAUCE_ACCESS_KEY@ondemand.saucelabs.com
+    export SELENIUM_PORT=80
+
+    erb extension-testing/codeception.yml.erb > codeception.yml
+    erb extension-testing/acceptance.suite.yml.erb > tests/acceptance.suite.yml
+    cp extension-testing/*Cept.php tests/acceptance/
+
+    vendor/bin/codecept run acceptance
+
+2. Verify in your Saucelabs dashboard that the tests show up properly
 
 -----

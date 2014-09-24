@@ -1,0 +1,19 @@
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+extensions:
+    enabled:
+        - Codeception\Extension\SaucelabsMetadata
+    config:
+        Codeception\Extension\SaucelabsMetadata:
+            username: <%= ENV['SAUCE_USERNAME'] %>
+            accesskey: <%= ENV['SAUCE_ACCESS_KEY'] %>
+            build: <%= ENV['SAUCE_METADATA_BUILD'] %>
+            tags: <%= ENV['SAUCE_METADATA_TAGS'] %>
