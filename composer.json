@@ -1,28 +1,28 @@
 {
-    "name":"codeception/notifier",
-    "description":"Notification Extension for Codeception",
-    "keywords":["notification", "acceptance testing", "functional testing", "unit testing", "tdd"],
-    "homepage":"http://codeception.com/",
+    "name": "codeception/notifier",
+    "description": "Notification Extension for Codeception",
+    "keywords": ["notification", "acceptance testing", "functional testing", "unit testing", "tdd"],
+    "homepage": "http://codeception.com/",
 
-    "type":"library",
-    "license":"MIT",
-    "authors":[
+    "type": "library",
+    "license": "MIT",
+    "authors": [
         {
-            "name":"Michael Bodnarchuk",
-            "email":"davert.php@mailican.com",
-            "homepage":"http://codeception.com"
+            "name": "Michael Bodnarchuk",
+            "email": "davert.php@mailican.com",
+            "homepage": "http://codeception.com"
         }
-    ],  
+    ],
     "require": {
         "namshi/notificator": "1.0.*"
     },
     "require-dev": {
         "codeception/codeception": "@dev"
     },
-    "autoload":{
-        "psr-0":{
-            "Codeception":"src"
-     
+    "autoload": {
+        "psr-0": {
+            "Codeception": "src"
+
         }
-    }    
+    }
 }
