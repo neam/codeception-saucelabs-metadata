@@ -16,27 +16,26 @@ Codeception extension that provides metadata to Saucelabs when running tests.
 3. Run `composer update neam/codeception-saucelabs-metadata`.
 4. Include the extension into `codeception.yml` configuration:
 
-Sample:
+Sample configuration:
 
-``` yaml
-paths:
-    tests: tests
-    log: tests/_log
-    data: tests/_data
-    helpers: tests/_helpers
-extensions:
-    enabled:
-      - Codeception\Extension\SaucelabsMetadata
-    config:
-      Codeception\Extension\SaucelabsMetadata:
-          username: "foouser"
-          accesskey: "secretavbcde1234"
-          build: "Shows up in the Build column in the Saucelabs dashboard"
-          tags: "shows up,in the tags column,in the saucelabs dashboard"
+    paths:
+        tests: tests
+        log: tests/_log
+        data: tests/_data
+        helpers: tests/_helpers
+    extensions:
+        enabled:
+          - Codeception\Extension\SaucelabsMetadata
+        config:
+          Codeception\Extension\SaucelabsMetadata:
+              username: "foouser"
+              accesskey: "secretavbcde1234"
+              build: "Shows up in the Build column in the Saucelabs dashboard"
+              tags: "shows up,in the tags column,in the saucelabs dashboard"
 
 ## Testing this extension
 
-1. Run the following from the same directory as this README (change the access details accordingly):
+Run the following from the same directory as this README (change the access details accordingly):
 
     composer install
     vendor/bin/codecept bootstrap
@@ -55,6 +54,6 @@ extensions:
 
     vendor/bin/codecept run acceptance
 
-2. Verify in your Saucelabs dashboard that the tests show up properly
+Verify in your Saucelabs dashboard that the tests show up properly.
 
 -----
