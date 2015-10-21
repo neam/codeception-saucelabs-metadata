@@ -12,9 +12,8 @@ Codeception extension that provides metadata to Saucelabs when running tests.
 ## Installation
 
 1. Install [Codeception](http://codeception.com) via Composer
-2. Add  `neam/codeception-saucelabs-metadata: "*"` to your `composer.json`
-3. Run `composer update neam/codeception-saucelabs-metadata`.
-4. Include the extension into `codeception.yml` configuration:
+2. Run `composer require neam/codeception-saucelabs-metadata dev-develop`
+3. Include the extension into `codeception.yml` configuration:
 
 Sample configuration:
 
